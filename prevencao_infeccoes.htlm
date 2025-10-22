@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meu Design Canva - Vitor</title>
+
+  <!-- Fonte agradável -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent: #00ff99; /* cor de destaque — troque se quiser */
+      --text: #ffffff;
+      --bg-overlay: rgba(0,0,0,0.45);
+      --max-width: 1100px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    /* Área principal do poster */
+    .poster{
+      width:100%;
+      max-width:var(--max-width);
+      aspect-ratio: 16/9; /* mantém proporção; altera se quiser poster vertical */
+      border-radius:14px;
+      overflow:hidden;
+      position:relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+    }
+
+    /* Sobreposição pra deixar texto legível */
+    .poster::before{
+      content:"";
+      position:absolute;inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.55) 100%);
+      z-index:1;
+    }
+
+    /* Conteúdo dentro do poster */
+    .content{
+      position:relative;
+      z-index:2;
+      padding:48px;
+      max-width:60%;
+    }
+
+    /* Exemplo de elemento no topo (tipo badge/date) */
+    .badge{
+      display:inline-block;
+      background: rgba(255,255,255,0.08);
+      color:var(--text);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+      margin-bottom:18px;
+      font-size:14px;
+      backdrop-filter: blur(4px);
+    }
+
+    h1{
+      font-size: clamp(26px, 4.6vw, 56px);
+      line-height:1.02;
+      margin-bottom:12px;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--text);
+      text-shadow: 0 6px 24px rgba(0,0,0,0.6);
+    }
+
+    p.lead{
+      font-size: clamp(14px, 2.2vw, 20px);
+      margin-bottom:22px;
+      color: rgba(255,255,255,0.92);
+      opacity:0.95;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:16px;
+      cursor:pointer;
+      text-decoration:none;
+      border:0;
+      transition: transform .12s ease, box-shadow .12s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+
+    .btn-primary{
+      background: linear-gradient(90deg, var(--accent), #00d988);
+      color:#022;
+    }
+
+    .btn-ghost{
+      background: rgba(255,255,255,0.08);
+      color:var(--text);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .btn:hover{ transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.5); }
+
+    /* Área lateral direita (opcional) para imagem ou texto pequeno) */
+    .side{
+      position:absolute;
+      right:0;
+      top:0;
+      bottom:0;
+      width:40%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+      z-index:2;
+    }
+
+    .side .card{
+      width:100%;
+      height:80%;
+      border-radius:12px;
+      overflow:hidden;
+      background: rgba(255,255,255,0.06);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* Responsividade: mobile */
+    @media (max-width:900px){
+      .content{ padding:28px; max-width:100%;}
+      .side{ display:none; }
+      .poster{ aspect-ratio: 3/4; /* para ficar mais alto no mobile */ }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Troque o background-image para a URL da imagem exportada do Canva
+       Ex.: background-image: url('assets/bg.jpg'); -->
+  <div class="poster" id="poster" style="background-image: url('assets/bg.jpg');">
+    <div class="content">
+      <span class="badge">EVENTO • 2025</span>
+
+      <h1>Nome do Evento / Título Principal</h1>
+
+      <p class="lead">Aqui vai a frase principal ou descrição curta do seu design — destaque aquilo que você quer que a pessoa veja primeiro.</p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#" onclick="alert('Clicou!')">Quero saber mais</a>
+        <a class="btn btn-ghost" href="#">Entrar em contato</a>
+      </div>
+    </div>
+
+    <!-- Lado direito opcional para imagem ou logo.
+         Se seu design do Canva tiver só um fundo com texto, pode deixar essa parte vazia ou remover. -->
+    <div class="side" aria-hidden="true">
+      <div class="card">
+        <!-- Pode colocar uma mini-imagem aqui: <img src="assets/logo.png" alt="logo" style="max-width:90%"> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Se preferir usar o link direto do Canva dentro de um iframe (nem sempre funciona) -->
+  <!-- 
+  <iframe src="https://www.canva.com/design/DAG2jO5wa94/view?embed" style="position:fixed;inset:0;border:0;" ></iframe>
+  -->
+
+</body>
+</html>
