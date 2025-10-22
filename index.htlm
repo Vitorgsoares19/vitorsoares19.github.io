@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Meu Design Canva - Vitor</title>
 
-  <!-- Fonte agradável -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -44,6 +43,8 @@
       display:flex;
       align-items:center;
       justify-content:flex-start;
+      /* ADICIONE A IMAGEM DE FUNDO AQUI: */
+      /* Exemplo: background-image: url('caminho/para/sua/imagem.jpg'); */
     }
 
     /* Sobreposição pra deixar texto legível */
@@ -145,52 +146,26 @@
       width:100%;
       height:80%;
       border-radius:12px;
-      overflow:hidden;
-      background: rgba(255,255,255,0.06);
-      display:flex;
-      align-items:center;
-      justify-content:center;
     }
+  </style> 
+  </head>
 
-    /* Responsividade: mobile */
-    @media (max-width:900px){
-      .content{ padding:28px; max-width:100%;}
-      .side{ display:none; }
-      .poster{ aspect-ratio: 3/4; /* para ficar mais alto no mobile */ }
-    }
-  </style>
-</head>
 <body>
+    <div class="poster">
+        
+        <div class="content">
+            <span class="badge">DESIGN WEB</span>
+            <h1>Crie Layouts Incríveis com Código Simples</h1>
+            <p class="lead">Este é o conteúdo do seu site. O código foi finalizado e estruturado corretamente para publicação.</p>
+            <div class="actions">
+                <a href="#" class="btn btn-primary">VER O PROJETO</a>
+                <a href="#" class="btn btn-ghost">SAIBA MAIS</a>
+            </div>
+        </div>
 
-  <!-- Troque o background-image para a URL da imagem exportada do Canva
-       Ex.: background-image: url('assets/bg.jpg'); -->
-  <div class="poster" id="poster" style="background-image: url('assets/bg.jpg');">
-    <div class="content">
-      <span class="badge">EVENTO • 2025</span>
+        <div class="side">
+             </div>
 
-      <h1>Nome do Evento / Título Principal</h1>
-
-      <p class="lead">Aqui vai a frase principal ou descrição curta do seu design — destaque aquilo que você quer que a pessoa veja primeiro.</p>
-
-      <div class="actions">
-        <a class="btn btn-primary" href="#" onclick="alert('Clicou!')">Quero saber mais</a>
-        <a class="btn btn-ghost" href="#">Entrar em contato</a>
-      </div>
     </div>
-
-    <!-- Lado direito opcional para imagem ou logo.
-         Se seu design do Canva tiver só um fundo com texto, pode deixar essa parte vazia ou remover. -->
-    <div class="side" aria-hidden="true">
-      <div class="card">
-        <!-- Pode colocar uma mini-imagem aqui: <img src="assets/logo.png" alt="logo" style="max-width:90%"> -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Se preferir usar o link direto do Canva dentro de um iframe (nem sempre funciona) -->
-  <!-- 
-  <iframe src="https://www.canva.com/design/DAG2jO5wa94/view?embed" style="position:fixed;inset:0;border:0;" ></iframe>
-  -->
-
 </body>
 </html>
